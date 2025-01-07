@@ -1,5 +1,7 @@
 ﻿# Matan Amsalem Home Assignment
 # This Readme is for the Sanity test for the assignment
+# After pulling the ripo and to running the test openr the VS terminal, make sure that you are in the currect path and run the # next command - "npx playwright test --headed".
+#In case of faiiling, the playwright repoet will opem in the browser
 # Before the test there is a signing up part to create data for the test
 # The test fllow is:
 # Navigate to the URL
