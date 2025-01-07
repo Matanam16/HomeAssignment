@@ -7,7 +7,7 @@
 # Navigate to the URL
 # Login with the created user cradentials
 # Select Category and Sub category
-# Select an item and add it to the cart
+# Select an item,validate that it in stock add it to the cart
 # Validate that the massage "Your product has been added to cart." is appearing in the dialog and click "View Cart"
 # Validate that the item that in the cart is the currect item and proceed to checkout and payment
 # Fill the payment detailes and click on the "Pay" button
