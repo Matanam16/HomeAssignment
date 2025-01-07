@@ -10,6 +10,7 @@ import CheckoutPage from '../pages/CheckoutPage';
 import PaymentPage from '../pages/PaymentPage';
 import { setupTestData } from '../pages/SetupTestData';
 import BasePage from '../pages/BasePage';
+import ItemInformationPage from '../pages/ItemInformationPage';
 
 
 test.describe("Sanity Test", async () => {
@@ -19,6 +20,7 @@ test.describe("Sanity Test", async () => {
   let myAccountPage: MyAcoountPage;
   let categoryAndBrandPage: CategoryAndBrandPage;
   let menTshirtsPage: MenTshirtsPage;
+  let itemInformationPage: ItemInformationPage;
   let confirmDialogPage: ConfirmDialogPage;
   let cartPage: CartPage;
   let checkoutPage: CheckoutPage;
@@ -46,6 +48,7 @@ test.describe("Sanity Test", async () => {
    butoonTopBarPage = new ButoonTopBarPage(page);
    categoryAndBrandPage = new CategoryAndBrandPage(page);
    menTshirtsPage = new MenTshirtsPage(page);
+   itemInformationPage = new ItemInformationPage(page);
    confirmDialogPage = new ConfirmDialogPage(page);
    cartPage = new CartPage(page);
    checkoutPage = new CheckoutPage(page);
@@ -72,8 +75,10 @@ test.describe("Sanity Test", async () => {
         await categoryAndBrandPage.selectSubCategoryFromTheList(subCategory);
     });
 
-    await test.step("Select an item", async () => {
-        await menTshirtsPage.addToCartByProductName(item);
+    await test.step("Select an item and validate that it in stock", async () => {
+        await menTshirtsPage.viewItemInfoByProductName(item);
+        await itemInformationPage.validateItemInStock('Availability: In Stock');
+        await itemInformationPage.clickOnAddToCartBtn();
     });
 
     await test.step("Validate that the item added to the cart and navigate to it", async () => {
