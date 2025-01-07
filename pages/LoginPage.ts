@@ -29,3 +29,4 @@ export default class LoginPage{
         expect (this.logoutBtn).toBeTruthy();
       }
     }
+
