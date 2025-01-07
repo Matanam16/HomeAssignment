@@ -31,6 +31,7 @@ test.describe("Sanity Test", async () => {
   const category = 'Men';
   const subCategory = 'Tshirts ';
   const item = 'Green Side Placket Detail T-Shirt';
+  const inStock = 'Availability: In Stock';
   const confiemMassage = ['Your product has been added to cart.' , 'Congratulations! Your order has been confirmed!'];
   const fullName = ['Mr. Matan Amsalem', 'Matan Amsalem'];
   const deliveryInfo = 'Haifa Israel 123456789';
@@ -77,7 +78,7 @@ test.describe("Sanity Test", async () => {
 
     await test.step("Select an item and validate that it in stock", async () => {
         await menTshirtsPage.viewItemInfoByProductName(item);
-        await itemInformationPage.validateItemInStock('Availability: In Stock');
+        await itemInformationPage.validateItemInStock(inStock);
         await itemInformationPage.clickOnAddToCartBtn();
     });
 
